@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная страница новостей</title>
+</head>
+<body>
+    <h1>Список новостей</h1>
+    {% for item in news %}
+        <div style="border: 1px solid #ccc; margin: 10px; padding: 10px;">
+            <h2>{{ item.title }}</h2>
+            <p>{{ item.content }}</p>
+            <p><small>Дата публикации: {{ item.created_at }}</small></p>
+        </div>
+    {% empty %}
+        <p>Новостей пока нет.</p>
+    {% endfor %}
+</body>
+</html>
